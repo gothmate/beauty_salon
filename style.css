@@ -24,6 +24,11 @@ ul {
 }
 
 /*========= Base ===================*/
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font: 400 1rem 'DM Sans', sans-serif;
   color: var(--text-color);
@@ -54,11 +59,20 @@ body {
 }
 
 .divider-1 {
-  height: 1px !important;
+  height: 1px;
   background: linear-gradient(
     270deg,
-    hsla(var(--hue), 36%, 57%, 1) 0%,
-    hsla(var(--hue), 65%, 88%, 0.34) 100%
+    hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 65%, 88%, 0.34)
+  );
+}
+
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
   );
 }
 
@@ -98,6 +112,14 @@ img {
   padding: 5rem 0;
 }
 
+.section header {
+  margin-bottom: 4rem;
+}
+
+.section .title {
+  margin-bottom: 1rem;
+}
+
 #header {
   border-bottom: 1px solid #e4e4e4;
   margin-bottom: 2rem;
@@ -110,6 +132,10 @@ img {
   z-index: 100;
   background-color: var(--body-color);
   width: 100%;
+}
+
+#header.scroll {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
 }
 
 main {
@@ -158,6 +184,12 @@ nav ul li a:hover::after {
 nav .menu {
   opacity: 0;
   visibility: hidden;
+  top: -20rem;
+  transition: 400ms;
+}
+
+nav .menu ul {
+  display: none;
 }
 
 nav.show .menu {
@@ -177,6 +209,7 @@ nav.show .menu {
 }
 
 nav.show ul.grid {
+  display: grid;
   gap: 4rem;
 }
 
@@ -193,13 +226,16 @@ nav .icon-close {
   opacity: 0;
 
   position: absolute;
+  top: -1.5rem;
   right: 1.5rem;
-  /* transição */
+
+  transition: 300ms;
 }
 
 nav.show div.icon-close {
   visibility: visible;
   opacity: 1;
+  top: 1.5rem;
 }
 
 /*========== HOME =====================*/
@@ -254,6 +290,10 @@ nav.show div.icon-close {
 
 /*======== About ===================*/
 
+#about {
+  background: white;
+}
+
 #about .text p {
   overflow: hidden;
 }
@@ -272,8 +312,8 @@ nav.show div.icon-close {
   width: 100%;
   background: var(--base-color-second);
   position: absolute;
-  top: -16.8%;
-  left: -30%;
+  top: -8.3%;
+  left: -33%;
   z-index: 0;
 }
 
@@ -294,10 +334,88 @@ nav.show div.icon-close {
 
 #about .text h1 {
   margin-bottom: 1rem;
-  text-align: center;
 }
 
 #about .text p {
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+/*======== Sevices ===================*/
+
+.card .grid {
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+
+.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}
+
+.card .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+#services {
+  background: white;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: left;
+}
+
+#services .text p {
+  overflow: hidden;
+}
+
+#services .container {
+  margin: 0;
+}
+
+#services .img {
+  position: relative;
+}
+
+#services .img::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -8.3%;
+  left: -33%;
+  z-index: 0;
+}
+
+#services .img img {
+  position: relative;
+}
+
+#services .img img,
+#services .img::before {
+  border-radius: 0.25rem;
+}
+
+#services .text h1 {
+  margin-bottom: 1rem;
+}
+
+#services .span {
+  color: var(--base-color);
+  font-weight: bold;
+}
+
+#services .text p {
   margin-bottom: 2rem;
   max-width: 100%;
 }
