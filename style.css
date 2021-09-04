@@ -259,6 +259,8 @@ nav.show div.icon-close {
   opacity: 1;
   top: 1.5rem;
   z-index: 100;
+  justify-content: left;
+  width: 205vw;
 }
 
 /*========== HOME =====================*/
