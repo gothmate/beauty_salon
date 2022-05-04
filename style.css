@@ -20,7 +20,7 @@ img {
 /*=========== Variáveis============== */
 
 :root {
-  --hue: 159;
+  --hue: 283;
   --base-color: hsl(var(--hue) 36% 57%);
   --base-color-second: hsl(var(--hue) 65% 88%);
   --base-color-alt: hsl(var(--hue) 57% 53%);
@@ -742,7 +742,7 @@ footer .social a:hover {
   }
 
   .container {
-    max-width: 960px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -752,7 +752,7 @@ footer .social a:hover {
   }
 
   .section header {
-    max-width: 32rem;
+    max-width: 100vw;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
